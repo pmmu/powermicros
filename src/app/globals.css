@@ -784,18 +784,15 @@ a {
 .grow-board.is-rack-board {
   position: relative;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem 0.95rem;
+  gap: 1.35rem 0.95rem;
   overflow: hidden;
   border-color: rgba(88, 88, 82, 0.42);
   background:
-    linear-gradient(90deg, transparent 0 calc(25% - 2px), rgba(118, 124, 121, 0.58) calc(25% - 2px) calc(25% + 2px), transparent calc(25% + 2px) calc(50% - 2px), rgba(118, 124, 121, 0.58) calc(50% - 2px) calc(50% + 2px), transparent calc(50% + 2px) calc(75% - 2px), rgba(118, 124, 121, 0.58) calc(75% - 2px) calc(75% + 2px), transparent calc(75% + 2px)),
-    repeating-linear-gradient(90deg, rgba(113, 120, 117, 0.36) 0 1px, transparent 1px 11px),
-    repeating-linear-gradient(0deg, rgba(95, 101, 99, 0.42) 0 2px, transparent 2px 14px),
-    linear-gradient(180deg, #f0ebe1, #d8d3c8 44%, #bdb8ad);
+    linear-gradient(90deg, rgba(105, 111, 108, 0.72) 0 14px, transparent 14px calc(25% - 2px), rgba(141, 147, 143, 0.58) calc(25% - 2px) calc(25% + 2px), transparent calc(25% + 2px) calc(50% - 2px), rgba(141, 147, 143, 0.58) calc(50% - 2px) calc(50% + 2px), transparent calc(50% + 2px) calc(75% - 2px), rgba(141, 147, 143, 0.58) calc(75% - 2px) calc(75% + 2px), transparent calc(75% + 2px) calc(100% - 14px), rgba(105, 111, 108, 0.72) calc(100% - 14px)),
+    linear-gradient(180deg, transparent 0 calc(25% - 9px), rgba(89, 96, 93, 0.72) calc(25% - 9px) calc(25% - 6px), rgba(226, 229, 222, 0.72) calc(25% - 6px) calc(25% - 4px), rgba(89, 96, 93, 0.72) calc(25% - 4px) calc(25% - 1px), transparent calc(25% - 1px) calc(50% - 9px), rgba(89, 96, 93, 0.72) calc(50% - 9px) calc(50% - 6px), rgba(226, 229, 222, 0.72) calc(50% - 6px) calc(50% - 4px), rgba(89, 96, 93, 0.72) calc(50% - 4px) calc(50% - 1px), transparent calc(50% - 1px) calc(75% - 9px), rgba(89, 96, 93, 0.72) calc(75% - 9px) calc(75% - 6px), rgba(226, 229, 222, 0.72) calc(75% - 6px) calc(75% - 4px), rgba(89, 96, 93, 0.72) calc(75% - 4px) calc(75% - 1px), transparent calc(75% - 1px) calc(100% - 9px), rgba(89, 96, 93, 0.72) calc(100% - 9px) calc(100% - 6px), rgba(226, 229, 222, 0.72) calc(100% - 6px) calc(100% - 4px), rgba(89, 96, 93, 0.72) calc(100% - 4px) calc(100% - 1px), transparent calc(100% - 1px)),
+    linear-gradient(180deg, #f3eee5, #ddd8cd 54%, #c9c2b6);
   box-shadow:
     inset 0 0 0 5px rgba(143, 148, 143, 0.54),
-    inset 16px 0 0 rgba(105, 111, 108, 0.68),
-    inset -16px 0 0 rgba(105, 111, 108, 0.68),
     0 16px 36px rgba(23, 39, 25, 0.12);
 }
 
@@ -863,8 +860,8 @@ a {
 .grow-slot.is-tray-slot {
   isolation: isolate;
   display: grid;
-  grid-template-rows: minmax(4.4rem, 1fr) auto;
-  min-height: 7.8rem;
+  grid-template-rows: minmax(4.15rem, 1fr) auto;
+  min-height: 7.25rem;
   border-color: rgba(255, 250, 242, 0.42);
   background:
     linear-gradient(180deg, rgba(255, 250, 242, 0.58), rgba(255, 250, 242, 0.12)),
@@ -876,14 +873,15 @@ a {
 .grow-slot.is-tray-slot::before {
   content: "";
   position: absolute;
-  right: 0.2rem;
-  bottom: 1.6rem;
-  left: 0.2rem;
-  height: 1rem;
+  right: 0.15rem;
+  bottom: 1.42rem;
+  left: 0.15rem;
+  height: 0.28rem;
   border-radius: 999px;
-  background: rgba(34, 34, 30, 0.18);
-  filter: blur(6px);
-  transform: skewX(-18deg);
+  background:
+    linear-gradient(90deg, transparent 0 5%, rgba(82, 88, 85, 0.9) 5% 95%, transparent 95%),
+    repeating-linear-gradient(90deg, rgba(82, 88, 85, 0.78) 0 1px, transparent 1px 9px);
+  box-shadow: 0 0.3rem 0 rgba(82, 88, 85, 0.26);
   z-index: -1;
 }
 
@@ -895,14 +893,14 @@ a {
   position: relative;
   display: grid;
   align-items: end;
-  min-height: 4.8rem;
+  min-height: 4.35rem;
   perspective: 480px;
 }
 
 .tray-stack {
   position: relative;
   display: block;
-  height: 4.45rem;
+  height: 4.05rem;
   transform: rotateX(58deg) rotateZ(-2deg);
   transform-style: preserve-3d;
 }
