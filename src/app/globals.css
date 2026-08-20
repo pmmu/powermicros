@@ -910,7 +910,7 @@ a {
   bottom: 0.2rem;
   left: 0.25rem;
   height: 3.25rem;
-  overflow: hidden;
+  overflow: visible;
   border: 2px solid #171915;
   border-radius: 8px;
   background:
@@ -952,11 +952,22 @@ a {
 
 .tray-soil,
 .tray-seeds,
-.tray-greens,
 .tray-harvest-glow {
   position: absolute;
   inset: 0.48rem 0.58rem 0.7rem;
   border-radius: 5px;
+}
+
+.tray-greens {
+  position: absolute;
+  right: 0.52rem;
+  bottom: 0.72rem;
+  left: 0.52rem;
+  height: 2.15rem;
+  border-radius: 5px;
+  filter: saturate(1.12);
+  pointer-events: none;
+  z-index: 2;
 }
 
 .tray-soil {
@@ -977,17 +988,48 @@ a {
   opacity: 0.9;
 }
 
-.tray-greens {
+.tray-greens::before {
+  content: "";
+  position: absolute;
+  right: 0.08rem;
+  bottom: 0;
+  left: 0.08rem;
+  height: 100%;
   background:
-    radial-gradient(ellipse at 12% 64%, rgba(171, 219, 112, 0.95) 0 7px, transparent 8px),
-    radial-gradient(ellipse at 24% 42%, rgba(81, 157, 67, 0.96) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 38% 66%, rgba(120, 190, 77, 0.96) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 54% 42%, rgba(72, 143, 66, 0.98) 0 9px, transparent 10px),
-    radial-gradient(ellipse at 70% 62%, rgba(160, 210, 95, 0.96) 0 8px, transparent 9px),
-    radial-gradient(ellipse at 86% 40%, rgba(79, 154, 70, 0.98) 0 8px, transparent 9px),
-    linear-gradient(180deg, rgba(106, 159, 74, 0.86), rgba(49, 100, 48, 0.9));
-  background-size: 64% 70%, 58% 62%, 54% 62%, 58% 65%, 58% 60%, 56% 62%, auto;
-  filter: saturate(1.12);
+    linear-gradient(90deg, transparent 0 4%, rgba(154, 204, 126, 0.95) 4% 5%, transparent 5% 11%),
+    linear-gradient(90deg, transparent 0 14%, rgba(83, 153, 72, 0.96) 14% 15.2%, transparent 15.2% 23%),
+    linear-gradient(90deg, transparent 0 28%, rgba(129, 189, 96, 0.96) 28% 29%, transparent 29% 36%),
+    linear-gradient(90deg, transparent 0 42%, rgba(77, 145, 70, 0.98) 42% 43.2%, transparent 43.2% 51%),
+    linear-gradient(90deg, transparent 0 57%, rgba(154, 204, 126, 0.96) 57% 58%, transparent 58% 66%),
+    linear-gradient(90deg, transparent 0 72%, rgba(83, 153, 72, 0.98) 72% 73.1%, transparent 73.1% 82%),
+    linear-gradient(90deg, transparent 0 88%, rgba(129, 189, 96, 0.96) 88% 89.2%, transparent 89.2%);
+  background-position: 0 0.4rem, 0 0.1rem, 0 0.35rem, 0 0, 0 0.2rem, 0 0.08rem, 0 0.28rem;
+  background-repeat: no-repeat;
+  background-size: 100% 72%, 100% 84%, 100% 78%, 100% 92%, 100% 82%, 100% 88%, 100% 76%;
+}
+
+.tray-greens::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -0.18rem;
+  left: 0;
+  height: 1.2rem;
+  background:
+    radial-gradient(ellipse at 4.8% 66%, rgba(183, 224, 118, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 5.8% 66%, rgba(70, 149, 68, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 14.4% 46%, rgba(173, 217, 112, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 15.6% 46%, rgba(66, 139, 65, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 28.5% 58%, rgba(171, 219, 112, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 29.7% 58%, rgba(72, 143, 66, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 42.5% 34%, rgba(154, 210, 102, 0.98) 0 4.5px, transparent 5.2px),
+    radial-gradient(ellipse at 43.8% 34%, rgba(58, 129, 61, 0.98) 0 4.5px, transparent 5.2px),
+    radial-gradient(ellipse at 57.4% 50%, rgba(183, 224, 118, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 58.6% 50%, rgba(70, 149, 68, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 72.4% 42%, rgba(154, 210, 102, 0.98) 0 4.5px, transparent 5.2px),
+    radial-gradient(ellipse at 73.7% 42%, rgba(58, 129, 61, 0.98) 0 4.5px, transparent 5.2px),
+    radial-gradient(ellipse at 88.5% 60%, rgba(171, 219, 112, 0.98) 0 4px, transparent 4.8px),
+    radial-gradient(ellipse at 89.7% 60%, rgba(72, 143, 66, 0.98) 0 4px, transparent 4.8px);
 }
 
 .tray-harvest-glow {
@@ -1041,8 +1083,9 @@ a {
 }
 
 .grow-slot.is-tray-slot.is-stage-germinating .tray-greens {
-  opacity: 0.56;
-  transform: scaleY(0.58);
+  height: 1.25rem;
+  opacity: 0.72;
+  transform: translateY(0.18rem) scaleY(0.82);
   transform-origin: bottom;
 }
 
@@ -1053,7 +1096,9 @@ a {
 }
 
 .grow-slot.is-tray-slot.is-stage-harvesting .tray-greens {
+  height: 2.55rem;
   filter: saturate(1.25) brightness(1.08);
+  transform: translateY(-0.2rem);
 }
 
 .grow-slot.is-tray-slot.is-stage-reserved {
