@@ -1,0 +1,52 @@
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: powermicros
+      POSTGRES_USER: powermicros
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U powermicros -d powermicros"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  migrate:
+    build:
+      context: .
+      target: migrator
+    env_file:
+      - .env.production
+    environment:
+      DATABASE_URL: postgresql://powermicros:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@db:5432/powermicros
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: "no"
+
+  web:
+    build:
+      context: .
+      target: runner
+    restart: unless-stopped
+    env_file:
+      - .env.production
+    environment:
+      DATABASE_URL: postgresql://powermicros:${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}@db:5432/powermicros
+      NODE_ENV: production
+      PORT: 3000
+      HOSTNAME: 0.0.0.0
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3002:3000"
+    volumes:
+      - uploads:/app/public/uploads
+
+volumes:
+  postgres_data:
+  uploads:
