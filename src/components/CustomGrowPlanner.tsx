@@ -115,8 +115,6 @@ const microgreenStages: Array<{ key: StageKey; label: string }> = [
   { key: "seeding", label: "Seeding" },
   { key: "germinating", label: "Germinating" },
   { key: "blackout", label: "Blackout" },
-  { key: "growing", label: "Growing" },
-  { key: "harvesting", label: "Harvesting" },
   { key: "requested", label: "Your request" },
   { key: "reserved", label: "Reserved" },
 ];
@@ -142,12 +140,13 @@ function getSlotStage(slot: GrowSlot, growTypeId: string, isSelected: boolean): 
   if (isSelected) return "requested";
   if (slot.status === "available") return "available";
   if (slot.status === "reserved") return "reserved";
-  if (slot.status === "harvest") return "harvesting";
 
   if (growTypeId === "microgreens") {
-    const stages: StageKey[] = ["seeding", "germinating", "blackout", "growing"];
+    const stages: StageKey[] = ["seeding", "germinating", "blackout"];
     return stages[slot.id % stages.length];
   }
+
+  if (slot.status === "harvest") return "harvesting";
 
   const stages: StageKey[] = ["growing", "flowering", "fruiting"];
   return stages[slot.id % stages.length];
@@ -323,7 +322,7 @@ export function CustomGrowPlanner() {
           </div>
 
           <div className={`grow-board${isMicrogreensView ? " is-rack-board" : ""}`} aria-label="Grow slots">
-            {visibleSlots.map((slot) => {
+            {visibleSlots.map((slot, index) => {
               const isSelected = selectedSlotIds.includes(slot.id);
               const isRelevant = slot.zone === activeZone;
               const stage = getSlotStage(slot, growTypeId, isSelected);
@@ -344,14 +343,14 @@ export function CustomGrowPlanner() {
                         <span className="tray-pan">
                           <span className="tray-soil" />
                           {stage === "seeding" || stage === "germinating" ? <span className="tray-seeds" /> : null}
-                          {stage === "reserved" || stage === "germinating" || stage === "growing" || stage === "harvesting" ? <span className="tray-greens" /> : null}
+                          {stage === "reserved" || stage === "germinating" ? <span className="tray-greens" /> : null}
                           {stage === "harvesting" ? <span className="tray-harvest-glow" /> : null}
                         </span>
                       </span>
                       <span className="watering-stream" />
                     </span>
                   ) : null}
-                  <span className="slot-zone">{slot.zone}</span>
+                  <span className="slot-zone">{isMicrogreensView ? `Tray ${index + 1}` : slot.zone}</span>
                   <span className="slot-crop">{isSelected ? "Your request" : slot.crop ?? "Open"}</span>
                 </button>
               );

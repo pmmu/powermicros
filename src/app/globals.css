@@ -788,13 +788,14 @@ a {
   overflow: hidden;
   border-color: rgba(88, 88, 82, 0.42);
   background:
-    linear-gradient(90deg, transparent 0 calc(25% - 2px), rgba(136, 136, 126, 0.44) calc(25% - 2px) calc(25% + 2px), transparent calc(25% + 2px) calc(50% - 2px), rgba(136, 136, 126, 0.44) calc(50% - 2px) calc(50% + 2px), transparent calc(50% + 2px) calc(75% - 2px), rgba(136, 136, 126, 0.44) calc(75% - 2px) calc(75% + 2px), transparent calc(75% + 2px)),
-    repeating-linear-gradient(0deg, rgba(104, 104, 96, 0.48) 0 4px, transparent 4px 25%),
-    linear-gradient(180deg, #ece6da, #d8d1c3 44%, #bbb4a6);
+    linear-gradient(90deg, transparent 0 calc(25% - 2px), rgba(118, 124, 121, 0.58) calc(25% - 2px) calc(25% + 2px), transparent calc(25% + 2px) calc(50% - 2px), rgba(118, 124, 121, 0.58) calc(50% - 2px) calc(50% + 2px), transparent calc(50% + 2px) calc(75% - 2px), rgba(118, 124, 121, 0.58) calc(75% - 2px) calc(75% + 2px), transparent calc(75% + 2px)),
+    repeating-linear-gradient(90deg, rgba(113, 120, 117, 0.36) 0 1px, transparent 1px 11px),
+    repeating-linear-gradient(0deg, rgba(95, 101, 99, 0.42) 0 2px, transparent 2px 14px),
+    linear-gradient(180deg, #f0ebe1, #d8d3c8 44%, #bdb8ad);
   box-shadow:
-    inset 0 0 0 5px rgba(119, 119, 110, 0.42),
-    inset 16px 0 0 rgba(104, 104, 96, 0.58),
-    inset -16px 0 0 rgba(104, 104, 96, 0.58),
+    inset 0 0 0 5px rgba(143, 148, 143, 0.54),
+    inset 16px 0 0 rgba(105, 111, 108, 0.68),
+    inset -16px 0 0 rgba(105, 111, 108, 0.68),
     0 16px 36px rgba(23, 39, 25, 0.12);
 }
 
@@ -864,10 +865,12 @@ a {
   display: grid;
   grid-template-rows: minmax(4.4rem, 1fr) auto;
   min-height: 7.8rem;
-  border-color: transparent;
-  background: transparent;
+  border-color: rgba(255, 250, 242, 0.42);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.58), rgba(255, 250, 242, 0.12)),
+    rgba(247, 241, 230, 0.72);
   padding: 0.5rem;
-  box-shadow: none;
+  box-shadow: inset 0 0 0 1px rgba(23, 39, 25, 0.08);
 }
 
 .grow-slot.is-tray-slot::before {
@@ -1013,6 +1016,10 @@ a {
   background-position: 0 0.36rem, 0 0.14rem, 0 0.48rem, 0 0.06rem, 0 0.3rem, 0 0.12rem, 0 0.42rem, 0 0.22rem, 0 0.04rem, 0 0.36rem, 0 0.16rem, 0 0.46rem, 0 0.08rem, 0 0.3rem;
   background-repeat: no-repeat;
   background-size: 100% 72%, 100% 86%, 100% 66%, 100% 92%, 100% 78%, 100% 88%, 100% 70%, 100% 82%, 100% 94%, 100% 76%, 100% 90%, 100% 68%, 100% 88%, 100% 74%;
+  filter:
+    drop-shadow(2px 0 rgba(96, 173, 73, 0.72))
+    drop-shadow(-2px 0 rgba(55, 132, 59, 0.58))
+    drop-shadow(4px 0 rgba(140, 196, 91, 0.52));
 }
 
 .tray-greens::after {
@@ -1051,6 +1058,10 @@ a {
     radial-gradient(ellipse at 85.9% 44%, rgba(58, 129, 61, 0.98) 0 3px, transparent 3.7px),
     radial-gradient(ellipse at 92.1% 60%, rgba(171, 219, 112, 0.98) 0 2.8px, transparent 3.5px),
     radial-gradient(ellipse at 92.9% 60%, rgba(72, 143, 66, 0.98) 0 2.8px, transparent 3.5px);
+  filter:
+    drop-shadow(2px 0 rgba(87, 158, 68, 0.72))
+    drop-shadow(-2px 1px rgba(159, 211, 97, 0.62))
+    drop-shadow(4px 0 rgba(67, 142, 64, 0.42));
 }
 
 .tray-harvest-glow {
@@ -1251,6 +1262,42 @@ a {
   color: var(--pm-deep-green);
 }
 
+.grow-slot.is-tray-slot.is-stage-available {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.62), rgba(255, 250, 242, 0.18)),
+    #f7f1e6;
+}
+
+.grow-slot.is-tray-slot.is-stage-seeding {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.56), rgba(255, 250, 242, 0.14)),
+    #d5b57f;
+}
+
+.grow-slot.is-tray-slot.is-stage-germinating {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.54), rgba(255, 250, 242, 0.12)),
+    #bfcf93;
+}
+
+.grow-slot.is-tray-slot.is-stage-blackout {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.16), rgba(255, 250, 242, 0.04)),
+    #373a31;
+}
+
+.grow-slot.is-tray-slot.is-stage-requested {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.56), rgba(255, 250, 242, 0.12)),
+    #f6d78b;
+}
+
+.grow-slot.is-tray-slot.is-stage-reserved {
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.44), rgba(255, 250, 242, 0.08)),
+    #d9d9d2;
+}
+
 .grow-summary-list {
   display: flex;
   flex-wrap: wrap;
@@ -1368,7 +1415,6 @@ a {
 
 .grow-slot.is-tray-slot.is-stage-requested {
   border-color: rgba(215, 155, 50, 0.72);
-  background: rgba(246, 215, 139, 0.08);
 }
 
 .form-success,
