@@ -991,45 +991,66 @@ a {
 .tray-greens::before {
   content: "";
   position: absolute;
-  right: 0.08rem;
+  right: 0.04rem;
   bottom: 0;
-  left: 0.08rem;
+  left: 0.04rem;
   height: 100%;
   background:
-    linear-gradient(90deg, transparent 0 4%, rgba(154, 204, 126, 0.95) 4% 5%, transparent 5% 11%),
-    linear-gradient(90deg, transparent 0 14%, rgba(83, 153, 72, 0.96) 14% 15.2%, transparent 15.2% 23%),
-    linear-gradient(90deg, transparent 0 28%, rgba(129, 189, 96, 0.96) 28% 29%, transparent 29% 36%),
-    linear-gradient(90deg, transparent 0 42%, rgba(77, 145, 70, 0.98) 42% 43.2%, transparent 43.2% 51%),
-    linear-gradient(90deg, transparent 0 57%, rgba(154, 204, 126, 0.96) 57% 58%, transparent 58% 66%),
-    linear-gradient(90deg, transparent 0 72%, rgba(83, 153, 72, 0.98) 72% 73.1%, transparent 73.1% 82%),
-    linear-gradient(90deg, transparent 0 88%, rgba(129, 189, 96, 0.96) 88% 89.2%, transparent 89.2%);
-  background-position: 0 0.4rem, 0 0.1rem, 0 0.35rem, 0 0, 0 0.2rem, 0 0.08rem, 0 0.28rem;
+    linear-gradient(90deg, transparent 0 3%, rgba(154, 204, 126, 0.95) 3% 3.7%, transparent 3.7% 8%),
+    linear-gradient(90deg, transparent 0 9%, rgba(83, 153, 72, 0.96) 9% 9.8%, transparent 9.8% 14%),
+    linear-gradient(90deg, transparent 0 15%, rgba(129, 189, 96, 0.96) 15% 15.7%, transparent 15.7% 20%),
+    linear-gradient(90deg, transparent 0 22%, rgba(77, 145, 70, 0.98) 22% 22.8%, transparent 22.8% 27%),
+    linear-gradient(90deg, transparent 0 29%, rgba(154, 204, 126, 0.96) 29% 29.8%, transparent 29.8% 34%),
+    linear-gradient(90deg, transparent 0 36%, rgba(83, 153, 72, 0.98) 36% 36.8%, transparent 36.8% 41%),
+    linear-gradient(90deg, transparent 0 43%, rgba(129, 189, 96, 0.96) 43% 43.8%, transparent 43.8% 48%),
+    linear-gradient(90deg, transparent 0 50%, rgba(154, 204, 126, 0.95) 50% 50.8%, transparent 50.8% 55%),
+    linear-gradient(90deg, transparent 0 57%, rgba(83, 153, 72, 0.96) 57% 57.8%, transparent 57.8% 62%),
+    linear-gradient(90deg, transparent 0 64%, rgba(129, 189, 96, 0.96) 64% 64.8%, transparent 64.8% 69%),
+    linear-gradient(90deg, transparent 0 71%, rgba(77, 145, 70, 0.98) 71% 71.8%, transparent 71.8% 76%),
+    linear-gradient(90deg, transparent 0 78%, rgba(154, 204, 126, 0.96) 78% 78.8%, transparent 78.8% 83%),
+    linear-gradient(90deg, transparent 0 85%, rgba(83, 153, 72, 0.98) 85% 85.8%, transparent 85.8% 90%),
+    linear-gradient(90deg, transparent 0 92%, rgba(129, 189, 96, 0.96) 92% 92.8%, transparent 92.8%);
+  background-position: 0 0.36rem, 0 0.14rem, 0 0.48rem, 0 0.06rem, 0 0.3rem, 0 0.12rem, 0 0.42rem, 0 0.22rem, 0 0.04rem, 0 0.36rem, 0 0.16rem, 0 0.46rem, 0 0.08rem, 0 0.3rem;
   background-repeat: no-repeat;
-  background-size: 100% 72%, 100% 84%, 100% 78%, 100% 92%, 100% 82%, 100% 88%, 100% 76%;
+  background-size: 100% 72%, 100% 86%, 100% 66%, 100% 92%, 100% 78%, 100% 88%, 100% 70%, 100% 82%, 100% 94%, 100% 76%, 100% 90%, 100% 68%, 100% 88%, 100% 74%;
 }
 
 .tray-greens::after {
   content: "";
   position: absolute;
   right: 0;
-  top: -0.18rem;
+  top: -0.1rem;
   left: 0;
   height: 1.2rem;
   background:
-    radial-gradient(ellipse at 4.8% 66%, rgba(183, 224, 118, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 5.8% 66%, rgba(70, 149, 68, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 14.4% 46%, rgba(173, 217, 112, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 15.6% 46%, rgba(66, 139, 65, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 28.5% 58%, rgba(171, 219, 112, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 29.7% 58%, rgba(72, 143, 66, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 42.5% 34%, rgba(154, 210, 102, 0.98) 0 4.5px, transparent 5.2px),
-    radial-gradient(ellipse at 43.8% 34%, rgba(58, 129, 61, 0.98) 0 4.5px, transparent 5.2px),
-    radial-gradient(ellipse at 57.4% 50%, rgba(183, 224, 118, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 58.6% 50%, rgba(70, 149, 68, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 72.4% 42%, rgba(154, 210, 102, 0.98) 0 4.5px, transparent 5.2px),
-    radial-gradient(ellipse at 73.7% 42%, rgba(58, 129, 61, 0.98) 0 4.5px, transparent 5.2px),
-    radial-gradient(ellipse at 88.5% 60%, rgba(171, 219, 112, 0.98) 0 4px, transparent 4.8px),
-    radial-gradient(ellipse at 89.7% 60%, rgba(72, 143, 66, 0.98) 0 4px, transparent 4.8px);
+    radial-gradient(ellipse at 3.1% 60%, rgba(183, 224, 118, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 3.9% 60%, rgba(70, 149, 68, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 9.1% 46%, rgba(173, 217, 112, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 9.9% 46%, rgba(66, 139, 65, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 15.1% 70%, rgba(171, 219, 112, 0.98) 0 2.6px, transparent 3.3px),
+    radial-gradient(ellipse at 15.9% 70%, rgba(72, 143, 66, 0.98) 0 2.6px, transparent 3.3px),
+    radial-gradient(ellipse at 22.2% 40%, rgba(154, 210, 102, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 23% 40%, rgba(58, 129, 61, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 29.1% 56%, rgba(183, 224, 118, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 29.9% 56%, rgba(70, 149, 68, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 36.1% 44%, rgba(154, 210, 102, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 36.9% 44%, rgba(58, 129, 61, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 43.1% 66%, rgba(171, 219, 112, 0.98) 0 2.6px, transparent 3.3px),
+    radial-gradient(ellipse at 43.9% 66%, rgba(72, 143, 66, 0.98) 0 2.6px, transparent 3.3px),
+    radial-gradient(ellipse at 50.1% 54%, rgba(183, 224, 118, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 50.9% 54%, rgba(70, 149, 68, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 57.1% 38%, rgba(173, 217, 112, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 57.9% 38%, rgba(66, 139, 65, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 64.1% 62%, rgba(171, 219, 112, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 64.9% 62%, rgba(72, 143, 66, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 71.1% 48%, rgba(154, 210, 102, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 71.9% 48%, rgba(58, 129, 61, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 78.1% 70%, rgba(183, 224, 118, 0.98) 0 2.6px, transparent 3.3px),
+    radial-gradient(ellipse at 78.9% 70%, rgba(70, 149, 68, 0.98) 0 2.6px, transparent 3.3px),
+    radial-gradient(ellipse at 85.1% 44%, rgba(154, 210, 102, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 85.9% 44%, rgba(58, 129, 61, 0.98) 0 3px, transparent 3.7px),
+    radial-gradient(ellipse at 92.1% 60%, rgba(171, 219, 112, 0.98) 0 2.8px, transparent 3.5px),
+    radial-gradient(ellipse at 92.9% 60%, rgba(72, 143, 66, 0.98) 0 2.8px, transparent 3.5px);
 }
 
 .tray-harvest-glow {
